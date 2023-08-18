@@ -1,0 +1,6 @@
+*.pyc
+*~
+/myvenv
+__pycache__
+'product_db'
+mysettings.py

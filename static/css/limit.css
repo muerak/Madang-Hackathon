@@ -1,0 +1,138 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "TheJamsil5Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-style: normal;
+}
+/* 웹페이지 */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  text-align: center;
+  margin: 0 80px!important;
+  background-image : url("/static/img/bgImg.png");
+  background-size:cover;
+  font-family: "Pretendard-Regular";
+  background-repeat: no-repeat;
+}
+body #header {
+  margin: 50px 0;
+}
+body #header img {
+  padding: 0;
+  width: 200px;
+}
+body #header header p {
+  font-family: "TheJamsil5Bold";
+  font-size: 60px;
+}
+
+body #saleProduct .productGroup {
+  box-shadow: 5px 5px 4px -4px rgba(115, 158, 115, 0.457),
+  5px 5px 40px 20px rgba(188, 205, 188, 0.044);;
+  background-color: #fff;
+  padding: 10px 0 20px;
+  border-radius: 20px;
+  width: 47%;
+  margin-bottom: 40px;
+}
+body #saleProduct .productGroup:nth-child(n+1) {
+  float: left;
+}
+body #saleProduct .productGroup:nth-child(2n) {
+  float: right;
+}
+body #saleProduct .productGroup .product p {
+  padding: 20px 0 10px 40px;
+  font-weight: 800;
+  word-spacing: 5px;
+  font-size: 30px;
+}
+body #saleProduct .productGroup .contents {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "a b c";
+  padding: 0 40px;
+}
+body #saleProduct .productGroup .contents .img img {
+  grid-area: a;
+  width: 150px;
+  height: 150px;
+}
+body #saleProduct .productGroup .contents .price {
+  grid-area: b;
+  position: relative;
+}
+body #saleProduct .productGroup .contents .price .original {
+  position: absolute;
+  transform: translate(-50%, -110%);
+  left: 50%;
+  top: 50%;
+  font-size: 25px;
+  text-decoration: line-through;
+}
+body #saleProduct .productGroup .contents .price .salePrice {
+  position: absolute;
+  transform: translate(-50%, 10%);
+  left: 50%;
+  top: 50%;
+  font-size: 30px;
+  color: red;
+  font-weight: 800;
+}
+#container #saleProduct .productGroup .contents .etc {
+  grid-area: c;
+  position: relative;
+}
+#container #saleProduct .productGroup .contents .etc .rsv {
+  /* 정가운데 정렬 코드 */
+  position: absolute;
+  transform: translate(-50%, 20%);
+  left: 50%;
+  top: 50%;
+  border: none;
+  background-image: linear-gradient(to bottom, #719c79, #428057);
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 25px;
+  /* 글자 안 내려가게 */
+  display: block;
+  white-space: nowrap;
+}
+#container #saleProduct .productGroup .contents .etc .stockTxt {
+  /* 정가운데 정렬 코드 */
+  position: absolute;
+  display: block;   /* 글자 안 내려가게 */
+  white-space: nowrap;   /* 글자 안 내려가게 */
+  transform: translate(-50%, -120%);
+  left: 50%;
+  top: 50%;
+  font-size: 30px;
+  font-weight: 600;
+}
+#container #saleProduct .productGroup .contents .etc #myModal {
+  font-size: 20px;
+}
+#container #saleProduct .productGroup .contents .etc #myModal .btn-default {
+  border-color: rgb(1, 167, 1);
+  font-size: 16px;
+}
+body footer {
+  text-align: center;
+}
+body footer #noProduct {
+  display: inline-block;
+  margin: 40px 0;
+  font-size: 25px;
+}
+
+/*# sourceMappingURL=firstSale.css.map */

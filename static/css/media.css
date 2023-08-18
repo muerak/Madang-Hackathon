@@ -1,0 +1,180 @@
+@charset "UTF-8";
+/*
+margin: auto; 가운데 정렬 참고 사이트
+https://www.codeit.kr/community/questions/UXVlc3Rpb246NWU1ZmMwNTlkNDQyYWMxZGI5YTMzY2I2
+*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+  background-image: url('/static/img/bgImgMobile.png');
+    margin: 0 40px!important;
+    text-align: center;
+  }
+  body #nav nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "a b c d";
+  }
+  body #nav nav .navGroup {
+    margin-bottom: 30px;
+  }
+  body #nav nav .navGroup a p {
+    font-size: 35px;
+    margin: 0;
+  }
+  body #nav nav #navA {
+    grid-area: a;
+  }
+  body #nav nav #navB {
+    grid-area: b;
+  }
+  body #nav nav #navC {
+    grid-area: c;
+  }
+  body #nav nav #navD {
+    grid-area: d;
+  }
+  /* body #nav nav #navE {
+    grid-area: e;
+  }
+  body #nav nav #navF {
+    grid-area: f;
+  } */
+  body #saleProduct .productGroup {
+    height: 400px;
+  }
+  body #saleProduct .productGroup .product p {
+    padding: 15px 0;
+    font-size: 35px;
+  }
+  body #saleProduct .productGroup .contents {
+    display: block;
+    padding: 0;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "a" "b";
+    height: 250px;
+  }
+  body #saleProduct .productGroup .contents .img {
+    display: block;
+  }
+  body #saleProduct .productGroup .contents .price {
+    padding-top: 11px;
+    position: inherit;
+  }
+  body #saleProduct .productGroup .contents .price .original {
+    position: inherit;
+    transform: translate(0);
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    font-size: 32px;
+  }
+  body #saleProduct .productGroup .contents .price .salePrice {
+    position: inherit;
+    transform: translate(0%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    font-size: 38px;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    background-image : url("/static/img/bgImgMobile.png");
+    margin: 0px!important;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+  }
+  body #header {
+    margin: 40px 0;
+  }
+  body #header img {
+    padding: 0;
+    width: 200px;
+  }
+  body #header p {
+    padding: 0;
+    font-size: 60px;
+  }
+  body #nav nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "a b" "c d";
+  }
+  body #nav nav .navGroup {
+    margin-bottom: 30px;
+  }
+  body #nav nav .navGroup a p {
+    font-size: 40px;
+    margin: 0;
+  }
+  body #nav nav #navA {
+    grid-area: a;
+  }
+  body #nav nav #navB {
+    grid-area: b;
+  }
+  body #nav nav #navC {
+    grid-area: c;
+  }
+
+  body #nav nav #navD {
+    grid-area: d;
+  }
+  body #saleProduct {
+    /* border: 1px solid red; */
+    padding: 10px 20px;
+    overflow: hidden;
+  }
+  body #saleProduct .productGroup {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  body #saleProduct .productGroup .product p {
+    display: block;
+    margin: 20px 0;
+    font-size: 38px;
+    padding: 10px 0;
+  }
+  body #saleProduct .productGroup .contents {
+    display: flex;
+    position: relative;
+  }
+  body #saleProduct .productGroup .contents .img {
+    flex-basis: 50%;
+    /* @extend %origin; */
+    transform: translate(0%);
+    position: inherit;
+    left: 0%;
+    top: 0%;
+  }
+  body #saleProduct .productGroup .contents .price {
+    flex-basis: 50%;
+    /* @extend %origin; */
+    transform: translate(0%);
+    position: relative;
+    left: 0%;
+    top: 0%;
+  }
+  body #saleProduct .productGroup .contents .price .original {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    left: 50%;
+    top: 50%;
+    font-size: 30px;
+  }
+  body #saleProduct .productGroup .contents .price .salePrice {
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    top: 50%;
+    font-size: 38px;
+  }
+  body footer #noProduct {
+    font-size: 2.19em;
+  }
+}

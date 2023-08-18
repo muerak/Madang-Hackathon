@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>마당 회원 조회</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/login.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="notice">
+        <header>
+            <img src="/static/img/logo.png" alt="">
+        </header>
+        <nav>
+            <h2>휴대폰 번호로 로그인해주세요.</h2>
+            <p>실제로는 업체와 제휴한 뒤 고객의 데이터베이스와 연동할 예정입니다.<br>
+                현재는 간단한 절차를 위해 임의로 정해둔 "8180"을 입력 부탁드립니다.</p>
+        </nav>
+    </div>
+    <div class="input">
+        <form method="post" action="{% url 'member:login' %}">
+            {% csrf_token %}
+            <input type="tel" id="phoneInput" name="phone_last_four" placeholder="전화번호 뒤 네 자리를 입력하세요" required>
+            <button class="btn" type="submit">로그인</button>
+
+        </form>
+        {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+        {% endif %}
+
+    </div>
+</div>
+</body>
+</html>
+
+

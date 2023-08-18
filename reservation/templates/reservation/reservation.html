@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 예약 조회</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/reservation.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+ <div class="back">
+      <a href="{% url 'reservation:logo_click' %}">
+        <img src="/static/img/back.png" alt="뒤로가기" width="40px">
+     </a>
+     <p class="reservation_title">상품 예약 조회</p>
+ </div>
+<main>
+    <div id="container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr class="title">
+                    <th width="50%">상품명</th>
+                    <th width="20%">가격</th>
+                    <th width="10%">수량</th>
+                    <th width="20%">합계</th>
+                </tr>
+                </thead>
+                 {% for reservation_item in reservation_items %}
+                <tbody>
+                 {% load humanize %}
+                <tr>
+                     <td>{{ reservation_item.reservation_product.limit_product_name }}</td>
+                    <td>{{ reservation_item.reservation_product.limit_discount_price | floatformat:'0' | intcomma }}
+                    </td>
+                    <td>{{ reservation_item.quantity }}</td>
+                    <td>{{ reservation_item.sum_price | floatformat:'0' | intcomma }}원</td>
+
+                </tr>
+                 {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<div id="footer">
+    <h4>👇매장에서 결제시 직원에게 보여주세요!</h4>
+    <div id="barcode">
+        <!-- button -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="font-size: 30px; padding: .375rem 1rem; background-color: rgb(88, 197, 80); border: none;">
+            직원 확인용
+        </button>
+        <!-- Modal -->
+    </div>
+    <div id="total">
+        <p>{{ total_price | floatformat:'0' |intcomma }}원</p>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                     <img src="/static/img/barcode_8180_.png" alt="Barcode Img">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

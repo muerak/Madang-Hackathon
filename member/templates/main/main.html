@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마당: 마트에 다 있어요</title>
+    <link rel="stylesheet" type="text/css" href="{% static './css/main.css' %}">
+</head>
+<body>
+    <div class="bgGreen">
+        <div class="container-wrapper">
+            <div class="header">
+                <header>
+                    <img src="/static/img/logo.png" alt="">
+                    <h2>손쉽게 할인 상품을 찾고, 예약까지!</h2>
+                </header>
+            </div>
+            <div class="nav">
+                <nav>
+                    <div class="point">
+                            <p class="point-label">💰현재 적립금</p>
+                            <p class="point-value">{{ points }}</p>
+                            <p class="point-unit">원</p>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container-menu">
+        <div class="first">
+            <a href="{% url 'SaleList:whole' %}">
+                <div class="sale">
+                    <div class="sale-content">
+                        <p>전체 할인 상품 보기<br><span class="stress">7월 26일 ~ 8월 8일</span></p>
+                    </div>
+                    <img src="/static/img/grocery-store.png" alt="특가 이미지" class="sale-image">
+                </div>
+            </a>
+        </div>
+        <div class="second">
+            <a href="{% url 'LimitList:limit_product_list' %}">
+                <div class="sale">
+                    <div class="sale-content">
+                        <p>당일 한정 특가!</p>
+                    </div>
+                    <img src="/static/img/shopping-cart.png" alt="특가 이미지" class="sale-image">
+                </div>
+            </a>
+        </div>
+        <div class="third">
+            <a href="{% url 'reservation:reservation' %}">
+                <div class="sale">
+                    <div class="sale-content">
+                        <p>예약 조회 / 현장 결제</p>
+                    </div>
+                        <img src="/static/img/barcode.png" alt="특가 이미지" class="sale-image">
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

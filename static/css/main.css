@@ -1,0 +1,250 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "TheJamsil5Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f9f5;
+}
+
+.bgGreen {
+  /* border: 1px solid black; */
+  position: relative;
+}
+
+.container-wrapper {
+  /* border: 1px solid red; */
+  float: left;
+  margin: 90px;
+}
+
+.container-menu {
+  /* border: 1px solid green; */
+  width:100%;
+  position:absolute;
+  padding-left: 40%;
+  top: 12%;
+}
+
+header {
+  /* border: 1px solid red; */
+}
+header h1 {
+  margin: 40px 0;
+  font-size: 60px;
+  font-family: "TheJamsil5Bold";
+}
+header img {
+  margin: 40px 0;
+  width: 20%;
+}
+header h2 {
+  font-size: 25px;
+  font-family: "Pretendard-Regular";
+  margin-left: 10px;
+}
+
+nav {
+  /* border: 1px solid blue; */
+  width: 400px;
+}
+
+.point {
+  margin-top: 50px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  font-family: "Pretendard-Regular";
+  background: linear-gradient(45deg, rgb(88, 197, 80), rgb(162, 237, 165)); ;
+  box-shadow: 0 25px 0 -15px rgb(186, 229, 186);
+}
+
+
+.point-label, .point-value, .point-unit {
+  padding: 0;
+}
+
+.point-label, .point-unit {
+  font-size: 25px;
+
+}
+
+.point-value {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0 2px 3px 10px; /* 조절 가능한 간격 설정 */
+}
+
+
+.container-menu .first, .second, .third {
+  position: relative;
+  display: flex;
+  padding: 0 40px;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
+  height: 190px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 8px 8px rgba(170, 116, 116, 0.05), 0 12px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+.container-menu a {
+  /*border: 1px solid blue;*/
+  width: 100%;
+  font-family: "Pretendard-Regular";
+  text-decoration: none;
+  color: #000;
+}
+.container-menu a .sale {
+  /*border: 1px solid blue;*/
+  display: flex;
+}
+
+.container-menu a .sale p {
+  /* border: 1px solid blue; */
+  font-size: 35px;
+  font-weight: bold;
+  width: 100%;
+}
+.container-menu a .sale p .stress {
+  font-family: "Pretendard-Regular";
+  color: red;
+  font-size: 25px;
+  font-weight:lighter;
+  font-style: italic;
+}
+
+.sale-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sale-content p {
+  flex: 1;
+}
+
+.sale-image {
+  width: 180px;
+  margin-left: auto;
+}
+
+@media (max-width: 1024px) {
+  body {
+    margin: 0;
+  }
+
+  header{
+    text-align: center;
+  }
+
+  header h2 {
+    margin-top: -30px;
+  }
+
+  nav {
+    /* border: 1px solid blue; */
+    width: 100%;
+    padding: 30px;
+  }
+
+  .point {
+    margin: 0;
+    padding: 20px;
+    border-radius: 30px;
+    font-family: "Pretendard-Regular";
+    border: none;
+    background: linear-gradient(45deg, rgb(88, 197, 80), rgb(162, 237, 165)); ;
+    box-shadow: 0 25px 0 -15px rgb(186, 229, 186);
+  }
+
+
+  .bgGreen {
+    background: none;
+    width: 100%;
+    height: 250px;
+    border-radius: 0 0 170px 170px;
+  }
+
+  .container-wrapper {
+    margin: 0;
+    width: 100%;
+    padding-left: 0;
+  }
+
+
+  .container-menu {
+    width: 100%;
+    position: absolute; /* 절대 위치 설정 */
+    padding: 0; /* 왼쪽 여백을 없애고, 상하 여백을 유지 */
+    top: 50%;
+  }
+
+  .container-menu .first, .second, .third {
+    padding: 0;
+    height: 270px;
+  }
+
+  .container-menu a .sale {
+    display: flex;
+    flex-direction:column;
+    margin: 0 25px;
+  }
+
+  .container-menu a .sale p {
+    font-size: 35px;
+    margin-left: 0px;
+    font-weight: bold;
+    width: 100%;
+    flex: 1;
+  }
+
+
+  .container-menu a .sale .sale-content, a .sale .sale-content {
+    margin-bottom: 10px;
+    margin-top: 20px
+  }
+
+  .container-menu a .sale .sale-image {
+    /*border: 1px solid green;*/
+    width: 180px;
+    margin: 0;
+    align-self: flex-end;
+  }
+
+  .container-menu .first a .sale .sale-image {
+    /*border: 1px solid green;*/
+    width: 170px;
+    margin-top: -30px;
+  }
+
+  .container-menu .second a .sale .sale-image {
+    /*border: 1px solid green;*/
+    margin-top: -10px;
+  }
+
+  .container-menu .third a .sale .sale-image {
+    /*border: 1px solid green;*/
+    margin-bottom: -5px;
+    width: 170px;
+  }
+}
