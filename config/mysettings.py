@@ -5,5 +5,7 @@ DATABASES = {
         'USER': 'hfmadang',
         'PASSWORD': 'cuteThor1117!',
         'HOST': 'hfmadang.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
+
     }
 }
